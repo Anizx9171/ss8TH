@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        const colorize = (...args) => ({
+            black: `\x1b[30m${args.join(' ')}`,
+            red: `\x1b[31m${args.join(' ')}`,
+            green: `\x1b[32m${args.join(' ')}`,
+            yellow: `\x1b[33m${args.join(' ')}`,
+            blue: `\x1b[34m${args.join(' ')}`,
+        });
+        console.log(colorize('Flipped', 'Classroom').red);
+        console.log(colorize('Learning Bootcamp', JSON.stringify({
+            opened: '8:00',
+            closed: '17:30'
+        })).bgCyan);
+        console.log(colorize(colorize('Web fullstack').green,
+            colorize('Developer').black).blue);
+    </script>
+</body>
+
+</html>
